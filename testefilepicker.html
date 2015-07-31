@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script>
+</head>
+<body>
+    <form action="//formspree.io/bruallima@gmail.com" method="POST">
+        <!-- Parâmetros enviados pelo usuário -->
+        Nome: <input type="text" name="Nome"/>
+        Email: <input type="text" name="Email" />
+        Mensagem: <input type="text" name="Mensagem" />
+
+        <!-- Parâmetros automáticos do Formspree-->
+        <input type="hidden" name="_next" value="confirmation.html" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_cc" value="outroemail@dominio.com" />
+        <input type="hidden" name="_subject" value="Formulário de contato com foto" />
+
+        <!-- Integração com o FilePicker -->
+        <input type="button" id="filepicker" value="Selecionar arquivo" />
+        <input type="hidden" name="Arquivo" id="file" />
+
+        <input type="submit" value="submit" />
+    </form>
+    <script>
+        // Configuração do FilePicker
+        var filePickerSetup = {
+            mimetype: 'image/*'
+        };
+
+        // Função de sucesso do FilePicker
+        var onSuccess = function (file) {
+            var inputFile = document.getElementById('file');
+            inputFile.value = file.url;
+        };
+
+        // Função de erro do FilePicker
+        var onError = function (data) {
+            alert('Houve um erro ao carregar seus arquivos');
+        };
+
+        // Listener do FilePicker
+        var filePickerButton = document.getElementById('filepicker');
+        filePickerButton.addEventListener('click', function() {
+            filepicker.setKey("A4xZuT80pQ3Kc1iZ3sj2Mz");
+            filepicker.pick(filePickerSetup, onSuccess, onError);
+        });
+    </script>
+</body>
+</html>

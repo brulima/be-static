@@ -1,22 +1,38 @@
+@font-face {
+    font-family: Segan;
+    src: url(../fonts/OpenSans-Light.ttf);
+}
 * {
     margin: 0;
     padding: 0;
 }
 body {
     background-color: #F7F3EE;
-    font-family: Arial;
+    font-family: Segan;
 }
 body > header,
 body > footer {
     background-color: #036564;
-    padding: 5% 5% 3.5% 5%;
     color: #F7F3EE;
-    font-size: 1.7em;
+    font-size: 0.9em;
     border-bottom: 8px solid #024746;
 }
+article,
+body > header,
+body > footer {
+    padding: 5% 5% 3.5% 5%;
+}
+body > header {
+    box-shadow: black 1px 1px 7px;
+}
+body > header h1 a:link,
+body > header h1 a:visited,
+body > header h1 a {
+    color: #F7F3EE;
+}
 article header {
-    margin: 5% 5% 2.5% 5%;
-    font-size: 1em;
+    margin: 0 0 6% 0;
+    font-size: 0.8em;
     text-align: center;
     padding: 1%;
     color: #033649;
@@ -25,27 +41,84 @@ article header h1 {
     font-size: 3em;
 }
 article header h2 {
-    font-size: 1em;
+    font-size: 1.1em;
     margin-top: 1%;
     font-weight: lighter;
 }
-a:link {
-    color: #031634;
-    text-decoration: none;
-    font-weight: bold;
-}
-a:visited {
-    color: #031634;
-    text-decoration: none;
-    font-weight: bold;
-}
+a:link,
+a:visited,
 a {
     color: #031634;
     text-decoration: none;
     font-weight: bold;
 }
 article p {
-    margin: 2% 10%;
-    font-size: 1.4em;
+    margin: 5% 0;
+    font-size: 1.3em;
     line-height: 125%;
+}
+article.home-call {
+    border-bottom: 1px solid gray;
+}
+#disqus_thread {
+    margin-top: 5%;
+}
+pre {
+    font-size: 1em;
+    padding: 1.5%;
+}
+img {
+    box-shadow: black 1px 1px 3px;
+    width: auto;
+    max-width: 100%;
+}
+p.image-display {
+    text-align: center;
+}
+h3, h4, h5 {
+    color: #033649;
+    margin-top: 5%;
+}
+h3 {
+    font-size: 1.8em;
+    text-align: center;
+}
+h4 {
+    font-size: 1.6em;
+}
+h5 {
+    font-size: 1.4em;
+}
+.topic-call {
+    margin: 5% 0;
+}
+.important-thing {
+    font-weight: bold;
+}
+
+@media (min-width: 700px){
+    body > header,
+    body > footer {
+        font-size: 1.7em;
+    }
+    article header {
+        font-size: 1em;
+    }
+    article p {
+        margin: 2% 0;
+        font-size: 1.3em;
+    }
+    pre {
+        font-size: 1.3em;
+    }
+    h3 {
+        font-size: 2em;
+        text-align: center;
+    }
+    h4 {
+        font-size: 1.8em;
+    }
+    h5 {
+        font-size: 1.6em;
+    }
 }
