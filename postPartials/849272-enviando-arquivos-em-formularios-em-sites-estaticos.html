@@ -1,12 +1,11 @@
 <article>
 <header>
 <h1>Enviando Arquivos em Formulários em Sites Estáticos</h1>
-<h2>Postador por <a href="http://brulima.github.io/?utm_source=Be%20Static!&utm_medium=Autor&utm_campaign=Enviando%20Arquivos%20em%20Formulários%20em%20Sites%20Estáticos" target="_blank">Bruna Lima</a> em 29 de Julho de 2015</h2>
+<h2>Postador por <a href="http://brulima.github.io/?utm_source=Be%20Static!&utm_medium=Autor&utm_campaign=Enviando%20Arquivos%20em%20Formulários%20em%20Sites%20Estáticos" target="_blank">Bruna Lima</a> em 30 de Julho de 2015</h2>
 </header>
 <p class="important-thing">O grande problema: Preciso fazer um formulário no meu site estático. E agora?!</p>
-<p>Calma! Vou apresentar uma ótima solução pra vocês: O <a href="http://formspree.io/" target="_blank">Formspree</a></p>
 <h3>Formspree</h3>
-<p>O Formspree permite que você coloque um formulário em seu site estático de forma bem simples. Cada vez que o formulário é preenchido e enviado, o Formspree envia um email com os dados que foram inseridos no seu formulário. O resultado é basicamente esse:</p>
+<p>O <a href="http://formspree.io/" target="_blank">Formspree</a> permite que você coloque um formulário em seu site estático de forma bem simples. Cada vez que o formulário é preenchido e enviado, o Formspree envia um email com os dados que foram inseridos no seu formulário. O resultado é basicamente esse:</p>
 <p><p class="image-display"><img src="img/post/formspree.jpg" alt="Formspree" /></p></p>
 <p class="topic-call">A implementação é bem simples. Você deve implementar o formulário normalmente, alterando apenas alguns atributos.</p>
 <h4>Action e Method</h4>
@@ -75,6 +74,7 @@
 <p>Depois de publicar seu formulário, você deverá preenchê-lo uma vez. Após preencher, o Formspree vai te enviar um email de confirmação de email. Vá ao seu email, clique no link de confirmação que foi enviado e pronto! A partir daí tudo deverá funcionar.</p>
 <p>Esse passo deve ser repetido para cada página diferente em que você colocar um formulário com Formspree. <br />Por exemplo, se você colocar um formulário com Formspree na url <span class="important-thing">http://meusite.com.br/contato/</span> e outro na url <span class="important-thing">http://meusite.com.br/trabalheconosco/</span>, você precisará preencher o formulário uma vez em cada página.</p>
 <p>O Formspree é gratuito, mas limitado a 1000 envios por email por mês. Caso precise de um número maior <a href="http://formspree.io/" target="_blank">entre em contato</a>.</p>
+<p>Vi o Formspree no blog do <a href="https://raank.github.io/blog/2015/05/form-de-contato-site-estatico.html" target="_blank">Felipe Rank</a>.</p>
 <p class="topic-call"><span class="important-thing">O problema maior ainda: Mas e os arquivos?! E se eu precisar de ibagens?!</span></p>
 <h3>FilePicker</h3>
 <p>Você pode integrar o seu formulário com a ferramenta <a href="https://www.filepicker.com/" target="_blank">FilePicker</a>, que vai fazer todo o gerenciamento dos arquivos pra você. A ferramenta FilePicker pode ser usada de várias maneiras. A implementação básica é bem simples. Aqui vou mostrar a implementação integrada com o Formspree usando JavaScript ♥.</p>
