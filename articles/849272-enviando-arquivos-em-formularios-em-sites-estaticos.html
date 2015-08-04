@@ -8,7 +8,7 @@
 ###Formspree
 
 O [Formspree](http://formspree.io/) permite que você coloque um formulário em seu site estático de forma bem simples. Cada vez que o formulário é preenchido e enviado, o Formspree envia um email com os dados que foram inseridos no seu formulário. O resultado é basicamente esse:
-![Formspree](img/post/formspree.jpg)
+![Formspree](img/post/enviando-arquivos-em-formularios-em-sites-estaticos/formspree.jpg)
 
 .topic#A implementação é bem simples. Você deve implementar o formulário normalmente, alterando apenas alguns atributos.
 
@@ -47,9 +47,9 @@ O input _gotcha deve ser do tipo text, mas não deve ser exibido na página. O F
 ´´´
 
 #####_replyto e _cc
-O input _replyto será utilizado para facilitar na hora de responder o seu email para a pessoa que te enviou o formulário.
+O input _replyto será utilizado no campo "Responder para" do email que o Formspree envia. Ou seja, se você colocá-lo no input de email, você poderá responder diretamente o email que o Formspree te enviar.
 ´´´html
-<input type="text" name="_replyto" />
+<input type="text" name="_replyto"/>
 ´´´
 O input _cc será utilizado para enviar cópias da resposta do formulário para outro email.
 ´´´html
@@ -101,9 +101,9 @@ Você precisará [criar uma conta no FilePicker](https://www.filepicker.com/regi
 
 ####API Key
 Após criar uma conta o FilePicker, copie o atributo data-fp-apikey do código que for mostrado na tela. <br />No exemplo da tela abaixo a nossa API Key é "<span class="important-thing">A4xZuT80pQ3Kc1iZ3sj2Mz</span>".
-![FilePicker APIKey](img/post/filepicker-apikey.jpg)
+![FilePicker APIKey](img/post/enviando-arquivos-em-formularios-em-sites-estaticos/filepicker-apikey.jpg)
 Caso você feche essa tela não se preocupe! Esse valor fica disponível o tempo todo no cabeçalho do site.
-![FilePicker APIKey](img/post/filepicker-apikey2.jpg)
+![FilePicker APIKey](img/post/enviando-arquivos-em-formularios-em-sites-estaticos/filepicker-apikey2.jpg)
 
 ####Script do FilePicker
 Você deve adicionar o script do FilePicker ao head da página que contém o formulário.
@@ -186,7 +186,7 @@ Ufa! Depois de toda essas informações vamos ver como fica o código inteiro da
     <form action="//formspree.io/seuemail@dominio.com" method="POST">
         <!-- Parâmetros enviados pelo usuário -->
         Nome: <input type="text" name="Nome"/>
-        Email: <input type="text" name="Email" />
+        Email: <input type="text" name="_replyto" />
         Mensagem: <input type="text" name="Mensagem" />
 
         <!-- Parâmetros automáticos do Formspree-->
@@ -229,7 +229,7 @@ Ufa! Depois de toda essas informações vamos ver como fica o código inteiro da
 </html>
 ´´´
 E o email enviado pelo Formspree seria bem parecido com esse:
-![Formspree](img/post/formspree-2.jpg)
+![Formspree](img/post/enviando-arquivos-em-formularios-em-sites-estaticos/formspree-2.jpg)
 
 Espero que esse post tenha ajudado você. Se precisar de mais ajuda deixe um comentário ou me mande um email que eu respondo!
 Aqui em baixo segue um outro exemplo de implementação que eu fiz no [Codepen](http://codepen.io/brulima/pen/zGMWgG). Essa implementação permite que o usuário selecione mais de um arquivo.

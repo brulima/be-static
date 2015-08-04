@@ -6,7 +6,7 @@
 <p class="important-thing">O grande problema: Preciso fazer um formulário no meu site estático. E agora?!</p>
 <h3>Formspree</h3>
 <p>O <a href="http://formspree.io/" target="_blank">Formspree</a> permite que você coloque um formulário em seu site estático de forma bem simples. Cada vez que o formulário é preenchido e enviado, o Formspree envia um email com os dados que foram inseridos no seu formulário. O resultado é basicamente esse:</p>
-<p><p class="image-display"><img src="img/post/formspree.jpg" alt="Formspree" /></p></p>
+<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/formspree.jpg" alt="Formspree" /></p></p>
 <p class="topic-call">A implementação é bem simples. Você deve implementar o formulário normalmente, alterando apenas alguns atributos.</p>
 <h4>Action e Method</h4>
 <p>O atributo action vai servir para direcionar as informações para o Formspree. Deve conter a url do Formspree (<span class="important-thing">//formspree.io/</span>) e <span class="important-thing">o email que receberá as informações</span> do formulário. <br />O atributo method deve ser igual a POST.</p>
@@ -37,9 +37,9 @@
 &lt;input type="text" name="_gotcha" style="display:none" /&gt;
 </pre>
 <h5>_replyto e _cc</h5>
-<p>O input _replyto será utilizado para facilitar na hora de responder o seu email para a pessoa que te enviou o formulário.</p>
+<p>O input _replyto será utilizado no campo "Responder para" do email que o Formspree envia. Ou seja, se você colocá-lo no input de email, você poderá responder diretamente o email que o Formspree te enviar.</p>
 <pre class="prettyprint lang-"html>
-&lt;input type="text" name="_replyto" /&gt;
+&lt;input type="text" name="_replyto"/&gt;
 </pre>
 <p>O input _cc será utilizado para enviar cópias da resposta do formulário para outro email.</p>
 <pre class="prettyprint lang-"html>
@@ -82,9 +82,9 @@
 <p>Você precisará <a href="https://www.filepicker.com/register/free" target="_blank">criar uma conta no FilePicker</a>. É bem rapido! <br /></p>
 <h4>API Key</h4>
 <p>Após criar uma conta o FilePicker, copie o atributo data-fp-apikey do código que for mostrado na tela. <br />No exemplo da tela abaixo a nossa API Key é "<span class="important-thing">A4xZuT80pQ3Kc1iZ3sj2Mz</span>".</p>
-<p><p class="image-display"><img src="img/post/filepicker-apikey.jpg" alt="FilePicker APIKey" /></p></p>
+<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/filepicker-apikey.jpg" alt="FilePicker APIKey" /></p></p>
 <p>Caso você feche essa tela não se preocupe! Esse valor fica disponível o tempo todo no cabeçalho do site.</p>
-<p><p class="image-display"><img src="img/post/filepicker-apikey2.jpg" alt="FilePicker APIKey" /></p></p>
+<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/filepicker-apikey2.jpg" alt="FilePicker APIKey" /></p></p>
 <h4>Script do FilePicker</h4>
 <p>Você deve adicionar o script do FilePicker ao head da página que contém o formulário.</p>
 <pre class="prettyprint lang-"html>
@@ -159,7 +159,7 @@ filePickerButton.addEventListener('click', function() {
     &lt;form action="//formspree.io/seuemail@dominio.com" method="POST"&gt;
         &lt;!-- Parâmetros enviados pelo usuário --&gt;
         Nome: &lt;input type="text" name="Nome"/&gt;
-        Email: &lt;input type="text" name="Email" /&gt;
+        Email: &lt;input type="text" name="_replyto" /&gt;
         Mensagem: &lt;input type="text" name="Mensagem" /&gt;
 
         &lt;!-- Parâmetros automáticos do Formspree--&gt;
@@ -202,7 +202,7 @@ filePickerButton.addEventListener('click', function() {
 &lt;/html&gt;
 </pre>
 <p>E o email enviado pelo Formspree seria bem parecido com esse:</p>
-<p><p class="image-display"><img src="img/post/formspree-2.jpg" alt="Formspree" /></p></p>
+<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/formspree-2.jpg" alt="Formspree" /></p></p>
 <p>Espero que esse post tenha ajudado você. Se precisar de mais ajuda deixe um comentário ou me mande um email que eu respondo!</p>
 <p>Aqui em baixo segue um outro exemplo de implementação que eu fiz no <a href="http://codepen.io/brulima/pen/zGMWgG" target="_blank">Codepen</a>. Essa implementação permite que o usuário selecione mais de um arquivo.</p>
 <iframe height='405' scrolling='no' src='//codepen.io/brulima/embed/zGMWgG/?height=405&theme-id=17439&default-tab=html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/brulima/pen/zGMWgG/'>zGMWgG</a> by Bruna Lima (<a href='http://codepen.io/brulima'>@brulima</a>) on <a href='http://codepen.io'>CodePen</a>.
