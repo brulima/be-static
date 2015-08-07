@@ -95,6 +95,32 @@ h5 {
 .important-thing {
     font-weight: bold;
 }
+#mc_embed_signup {
+    margin-top: 2%;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+#mc_embed_signup form input {
+    font-family: Segan;
+    font-size: 0.9em;
+    font-weight: lighter;
+    width: 100%;
+    margin-top: 1%;
+}
+
+#mc_embed_signup form input[type="submit"] {
+    background-color: #024746;
+    border: none;
+    color: #F7F3EE;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 2px;
+}
+
 
 @media (min-width: 700px){
     body > header,
@@ -120,5 +146,21 @@ h5 {
     }
     h5 {
         font-size: 1.6em;
+    }
+    #mc_embed_signup form input {
+        width: 30%;
+        margin-left: 2%;
+        font-size: 1.3em;
+        float: left;
+    }
+    #mc_embed_signup form input[type="submit"] {
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 1.3em;
+        padding: 0.15% 0;
+        cursor: pointer;
+    }
+    #mc_embed_signup {
+        margin-top: 0%;
     }
 }
