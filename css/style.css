@@ -15,20 +15,25 @@ body > footer {
     background-color: #036564;
     color: #F7F3EE;
     font-size: 0.9em;
-    border-bottom: 8px solid #024746;
 }
 article,
-body > header,
 body > footer {
     padding: 5% 5% 3.5% 5%;
-}
-body > header {
-    box-shadow: black 1px 1px 7px;
 }
 body > header h1 a:link,
 body > header h1 a:visited,
 body > header h1 a {
     color: #F7F3EE;
+}
+body > header {
+    box-shadow: black 1px 1px 7px;
+    border-bottom: 8px solid #024746;
+}
+body > header h1 {
+    padding: 2% 2% 0 2%;
+}
+body > header h2 {
+    padding: 0 2% 4% 2%;
 }
 article header {
     margin: 0 0 6% 0;
@@ -101,6 +106,10 @@ h5 {
     text-align: center;
     font-weight: bold;
     width: 100%;
+    background-color: rgb(3, 101, 100);
+    margin-top: 0%;
+    display: inline-table;
+
 }
 #mc_embed_signup form input {
     font-family: Segan;
@@ -150,17 +159,17 @@ h5 {
     #mc_embed_signup form input {
         width: 30%;
         margin-left: 2%;
-        font-size: 1.3em;
+        font-size: 0.8em;
         float: left;
     }
     #mc_embed_signup form input[type="submit"] {
         padding-top: 0;
         padding-bottom: 0;
-        font-size: 1.3em;
+        font-size: 0.8em;
         padding: 0.15% 0;
         cursor: pointer;
     }
     #mc_embed_signup {
-        margin-top: 0%;
+        padding-bottom: 1%;
     }
 }
