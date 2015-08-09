@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
             var data = [getHeader(), file.partial, file.footer].join('\n');
 
-            console.log('Build ', path.post);
+            console.log('File ', path.post);
             fs.writeFileSync(path.post, data, 'utf-8');
         });
     };

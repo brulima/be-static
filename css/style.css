@@ -130,7 +130,6 @@ h5 {
     letter-spacing: 2px;
 }
 
-
 @media (min-width: 700px){
     body > header,
     body > footer {
@@ -156,20 +155,33 @@ h5 {
     h5 {
         font-size: 1.6em;
     }
+    body > header h2 {
+        padding: 0 2% 4% 2%;
+        border-bottom: 8px solid #024746;
+    }
+    #mc_embed_signup form input,
+    #mc_embed_signup form input[type="submit"] {
+        font-size: 0.5em;
+    }
     #mc_embed_signup form input {
         width: 30%;
         margin-left: 2%;
-        font-size: 0.8em;
         float: left;
     }
     #mc_embed_signup form input[type="submit"] {
         padding-top: 0;
         padding-bottom: 0;
-        font-size: 0.8em;
         padding: 0.15% 0;
         cursor: pointer;
     }
     #mc_embed_signup {
         padding-bottom: 1%;
+    }
+}
+
+@media (min-width: 970px){
+    #mc_embed_signup form input,
+    #mc_embed_signup form input[type="submit"] {
+        font-size: 0.8em;
     }
 }
