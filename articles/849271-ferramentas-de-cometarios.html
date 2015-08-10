@@ -1,0 +1,50 @@
+<header>
+#Ferramentas de Comentários
+##Postado por [Bruna Lima](http://brulima.github.io/) em 09 de Agosto de 2015
+</header>
+
+Nesse artigo vamos falar um pouco mais de duas ferramentas bem bacanas para fazer o gerenciamento de comentários em seu site, as vantagens de cada uma e como colocá-las em seu site.
+
+###Disqus x Facebook
+
+####Disqus
+O Disqus oferece login por Facebook, Gmail, Twitter ou pelo próprio Disqus. <br /> Uma coisa muito legal é que o Disqus possue uma estrutura de "rede social de comentários". Ou seja, o usuário pode seguir seus amigos e ver os sites que eles estão comentando. O Disqus também sugere novos sites e posts aos usuários e isso gera mais visitas no seu site ou post. <br />
+
+####Facebook
+A ferramenta de comentários é muito prática. O Login é feito bem facilmente pelo Facebook. (A vá) <br /> Uma vantagem do Facebook é que a ferramenta já é conhecida e possui a confiança dos usuários.
+
+####Qual escolher?
+Essa questão além de depender da sua preferência, depende também dos seus usuários. O Facebook pode ser uma melhor opção para o seu usuário não exitar em comentar sua página. Mas o Disqus pode ser uma melhor opção para usuários mais experientes por causa de sua estrutura.
+
+###Colocando comentários no seu site!
+
+####Facebook
+
+#####Crie um App ID
+Você deve cadastrar seu site como um App no Facebook. Siga os passos abaixo: <br /> [Faça o cadastro aqui](https://developers.facebook.com/quickstarts/?platform=web)
+
+Preencha o nome do seu APP e clique em "Create new Facebook App ID".
+![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-1-ok.png)
+
+Escolha a categoria do seu App e clique em "Create App ID"
+![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-2-ok.png)
+
+Após criar o seu App ID, clique em "Skip Quick Start" no canto superior direito. <br /> Grave o seu App ID!
+![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-3-ok.png)
+
+#####Configure sua página
+Adicione o seguinte código à sua página. O código deve ser colocado próximo à tag de abertura do body.
+´´´html
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4&appId=1608389106101371";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+´´´
+Adicione a seguinte div no local em que a ferramenta de comentários do Facebook deve ser colocada.
+´´´html
+<div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-numposts="5"></div>
+´´´
