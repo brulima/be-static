@@ -8,29 +8,29 @@ Nesse artigo vamos falar um pouco mais de duas ferramentas bem bacanas para faze
 ###Disqus x Facebook
 
 ####Disqus
-O Disqus oferece login por Facebook, Gmail, Twitter ou pelo próprio Disqus. <br /> Uma coisa muito legal é que o Disqus possue uma estrutura de "rede social de comentários". Ou seja, o usuário pode seguir seus amigos e ver os sites que eles estão comentando. O Disqus também sugere novos sites e posts aos usuários e isso gera mais visitas no seu site ou post. <br /> O Disqus funciona para diversas plataformas, inclusive Wordpress, Blogger e Tumblr. 
-![Crie um App ID](img/post/ferramentas-de-comentarios/disqus-exemplo.png)
+O Disqus oferece login por Facebook, Gmail, Twitter ou pelo próprio Disqus. <br /> Uma coisa muito legal é que o Disqus possue uma estrutura de "rede social de comentários". Ou seja, o usuário pode seguir seus amigos e ver os sites que eles estão comentando. O Disqus também sugere novos sites e posts aos usuários e isso gera mais visitas para o seu site ou post. <br /> O Disqus funciona para diversas plataformas, inclusive Wordpress, Blogger e Tumblr.
+![Crie um App ID](img/post/ferramentas-de-comentarios/disqus-exemplo.jpg)
 
 ####Facebook
 A ferramenta de comentários é muito prática. O Login é feito bem facilmente pelo Facebook. (A vá) <br /> Uma vantagem do Facebook é que a ferramenta já é conhecida e possui a confiança dos usuários.
-![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-exemplo.png)
+![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-exemplo.jpg)
 
 ####Qual escolher?
-Essa questão além de depender da sua preferência, depende também do estilo dos seus usuários. O Facebook pode ser uma melhor opção para o seu usuário não exitar em comentar sua página. Mas o Disqus pode ser uma melhor opção para usuários mais experientes por causa de sua estrutura.
+Essa questão depende principalmente do estilo dos seus usuários e do seu site. <br /> O Facebook pode ser uma melhor opção para o seu usuário não exitar em comentar sua página, pois não precisa de novos cadastros. <br /> Por outro lado, o Disqus pode oferecer uma experiência mais completa para o seu usuário, principalmente se ele for do tipo que acompanha blogs e notícias.
 
 ###Colocando comentários no seu site!
 
 ####Disqus
 
 #####Crie uma conta
-Você deve [criar uma conta no Disqus aqui](https://disqus.com/admin/signup/) seguindo os passos do formulário. 
+Você deve [criar uma conta no Disqus aqui](https://disqus.com/admin/signup/) seguindo os passos do formulário.
 
 #####Adicione o Disqus ao seu site
-Escolha a plataforma do seu site. No caso vou exemplificar com universal code. 
-![Adicione o Disqus ao seu site](img/post/ferramentas-de-comentarios/disqus-1.png)
+Escolha a plataforma do seu site. No caso vou exemplificar com universal code.
+![Adicione o Disqus ao seu site](img/post/ferramentas-de-comentarios/disqus-1.jpg)
 
 Adicione o código mostrado ao seu site, no local onde os comentários devem ficar.
-![Adicione o Disqus ao seu site](img/post/ferramentas-de-comentarios/disqus-2.png)
+![Adicione o Disqus ao seu site](img/post/ferramentas-de-comentarios/disqus-2.jpg)
 
 ####Facebook
 
@@ -38,16 +38,16 @@ Adicione o código mostrado ao seu site, no local onde os comentários devem fic
 Você deve cadastrar seu site como um App no Facebook. Siga os passos abaixo: <br /> [Faça o cadastro aqui](https://developers.facebook.com/quickstarts/?platform=web)
 
 Preencha o nome do seu APP e clique em "Create new Facebook App ID".
-![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-1-ok.png)
+![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-1.jpg)
 
 Escolha a categoria do seu App e clique em "Create App ID"
-![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-2-ok.png)
+![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-2.jpg)
 
 Após criar o seu App ID, clique em "Skip Quick Start" no canto superior direito. <br /> Grave o seu App ID!
-![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-3-ok.png)
+![Crie um App ID](img/post/ferramentas-de-comentarios/facebook-app-3.jpg)
 
 #####Configure sua página
-Adicione o seguinte código à sua página. O código deve ser colocado próximo à tag de abertura do body. Não se esqueça de substituir onde está escrito "[SEU APP ID]" pelo SEU App ID.
+Adicione o seguinte código à sua página. O código deve ser colocado próximo à tag de abertura do body. Não se esqueça de substituir <span class="important-thing">"[SEU APP ID]"</span> pelo SEU App ID.
 ´´´html
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -58,7 +58,10 @@ Adicione o seguinte código à sua página. O código deve ser colocado próximo
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 ´´´
-Adicione a seguinte div no local em que a ferramenta de comentários do Facebook deve ser colocada. Você deve substituir "[HREF DOS COMENTÁRIOS]" pela URL da página onde os comentários serão colocados. Você pode fazer essa substituição dinamicamente com um pouquinho de JavaScript. ♥
+Adicione a seguinte div no local em que a ferramenta de comentários do Facebook deve ser colocada. Você deve substituir <span class="important-thing">"[HREF DOS COMENTÁRIOS]"</span> pela URL da página referente aos comentários. Por exemplo, nessa página a URL seria <span class="important-thing">http://brulima.github.io/bestatic/post/ferramentas-de-cometarios.html</span><br />  Você pode fazer essa substituição dinamicamente com um pouquinho de JavaScript. ♥
 ´´´html
 <div class="fb-comments" data-href="[HREF DOS COMENTÁRIOS]" data-numposts="5"></div>
 ´´´
+
+###E você?
+Conhece mais alguma ferramenta que faz gerenciamento de código? Conta pra gente!
