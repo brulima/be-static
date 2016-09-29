@@ -1,23 +1,29 @@
 <article>
 <header>
-<h1>Enviando Arquivos em Formulários em Sites Estáticos</h1>
-<h2>Postado por <a href="http://brulima.github.io/" target="_blank">Bruna Lima</a> em 30 de Julho de 2015</h2>
+<h1>Enviando Arquivos em Formulários em Sites Estáticos</h1>
+<h2>Postado por <a href="http://brulima.github.io/" target="_blank">Bruna Lima</a> em 30 de Julho de 2015</h2>
 </header>
+<p></p>
 <p class="important-thing">O grande problema: Preciso fazer um formulário no meu site estático. E agora?!</p>
-<h3>Formspree</h3>
-<p>O <a href="http://formspree.io/" target="_blank">Formspree</a> permite que você coloque um formulário em seu site estático de forma bem simples. Cada vez que o formulário é preenchido e enviado, o Formspree envia um email com os dados que foram inseridos no seu formulário. O resultado é basicamente esse:</p>
-<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/formspree.jpg" alt="Formspree" /></p></p>
-<p class="topic-call">A implementação é bem simples. Você deve implementar o formulário normalmente, alterando apenas alguns atributos.</p>
-<h4>Action e Method</h4>
-<p>O atributo action vai servir para direcionar as informações para o Formspree. Deve conter a url do Formspree (<span class="important-thing">//formspree.io/</span>) e <span class="important-thing">o email que receberá as informações</span> do formulário. <br />O atributo method deve ser igual a POST.</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<h3>Formspree</h3>
+<p></p>
+<p>O <a href="http://formspree.io/" target="_blank">Formspree</a> permite que você coloque um formulário em seu site estático de forma bem simples. Cada vez que o formulário é preenchido e enviado, o Formspree envia um email com os dados que foram inseridos no seu formulário. O resultado é basicamente esse:</p>
+<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/formspree.jpg" alt="Formspree" /></p></p>
+<p></p>
+<p class="topic-call">A implementação é bem simples. Você deve implementar o formulário normalmente, alterando apenas alguns atributos.</p>
+<p></p>
+<h4>Action e Method</h4>
+<p>O atributo action vai servir para direcionar as informações para o Formspree. Deve conter a url do Formspree (<span class="important-thing">//formspree.io/</span>) e <span class="important-thing">o email que receberá as informações</span> do formulário. <br />O atributo method deve ser igual a POST.</p>
+<pre class="prettyprint lang-"html>
 &lt;form action="//formspree.io/seuemail@dominio.com" method="POST"&gt;
     &lt;!-- inputs aqui --&gt;
 &lt;/form&gt;
 </pre>
-<h4>Name</h4>
-<p>O atributo name dos inputs será o nome do campo exibido no email enviado pelo Formspree.</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<h4>Name</h4>
+<p>O atributo name dos inputs será o nome do campo exibido no email enviado pelo Formspree.</p>
+<pre class="prettyprint lang-"html>
 &lt;form action="//formspree.io/seuemail@dominio.com" method="POST"&gt;
     Nome: &lt;input type="text" name="Nome" /&gt;
     Email: &lt;input type="text" name="Email" /&gt;
@@ -25,38 +31,44 @@
     &lt;input type="submit" value="Enviar" /&gt;
 &lt;/form&gt;
 </pre>
-<p class="topic-call">O Formspree também reconhece alguns valores especiais que podem ser passados no atributo name.</p>
-<h5>_next</h5>
-<p>O Formspree utilizará o input _next para redirecionar o usuário após o envio do formulário. Você pode preenchê-lo com a url de uma página de sucesso, por exemplo.</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<p class="topic-call">O Formspree também reconhece alguns valores especiais que podem ser passados no atributo name.</p>
+<p></p>
+<p></p>
+<h5>_next</h5>
+<p>O Formspree utilizará o input _next para redirecionar o usuário após o envio do formulário. Você pode preenchê-lo com a url de uma página de sucesso, por exemplo.</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="hidden" name="_next" value="confirmation.html" /&gt;
 </pre>
-<h5>_gotcha</h5>
-<p>O input _gotcha deve ser do tipo text, mas não deve ser exibido na página. O Formspree vai usá-lo para validar se foi um humano ou um script automático que preencheu o formulário. Os scripts automáticos preenchem todos os inputs de um formulário. Ou seja, se o input _gotcha tiver algum valor, o Formspree considera que foi preenchido automáticamente por um script e não envia o para o seu email.</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<h5>_gotcha</h5>
+<p>O input _gotcha deve ser do tipo text, mas não deve ser exibido na página. O Formspree vai usá-lo para validar se foi um humano ou um script automático que preencheu o formulário. Os scripts automáticos preenchem todos os inputs de um formulário. Ou seja, se o input _gotcha tiver algum valor, o Formspree considera que foi preenchido automáticamente por um script e não envia o para o seu email.</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="text" name="_gotcha" style="display:none" /&gt;
 </pre>
-<h5>_replyto e _cc</h5>
-<p>O input _replyto será utilizado no campo "Responder para" do email que o Formspree envia. Ou seja, se você colocá-lo no input de email, você poderá responder diretamente o email que o Formspree te enviar.</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<h5>_replyto e _cc</h5>
+<p>O input _replyto será utilizado no campo "Responder para" do email que o Formspree envia. Ou seja, se você colocá-lo no input de email, você poderá responder diretamente o email que o Formspree te enviar.</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="text" name="_replyto"/&gt;
 </pre>
-<p>O input _cc será utilizado para enviar cópias da resposta do formulário para outro email.</p>
-<pre class="prettyprint lang-"html>
+<p>O input _cc será utilizado para enviar cópias da resposta do formulário para outro email.</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="hidden" name="_cc" value="outroemail@dominio.com" /&gt;
 </pre>
-<h5>_subject</h5>
-<p>O Formspree utilizará o input _subject como assunto do email que será enviado.</p>
-<p>Você pode deixar o assunto do email em aberto para o usuário preencher. Basta deixá-lo como tipo text.</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<h5>_subject</h5>
+<p>O Formspree utilizará o input _subject como assunto do email que será enviado.</p>
+<p>Você pode deixar o assunto do email em aberto para o usuário preencher. Basta deixá-lo como tipo text.</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="text" name="_subject" /&gt;
 </pre>
-<p>Ou colocar um assunto pré-definido por você para agrupar e identificar os email com maior facilidade.</p>
-<pre class="prettyprint lang-"html>
+<p>Ou colocar um assunto pré-definido por você para agrupar e identificar os email com maior facilidade.</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="hidden" name="_subject" value="[Formspree] Contato do formulário" /&gt;
 </pre>
-<p>Ou até mesmo deixar esse valor dinâmico com um pouquinho de JavaScript ♥. <br /> No exemplo a seguir o assunto será de acordo com o nome preenchido pelo usuário. Mas também poderia ser um valor random, ou qualquer outro que fique melhor para a sua solução.</p>
-<pre class="prettyprint lang-"html>
+<p>Ou até mesmo deixar esse valor dinâmico com um pouquinho de JavaScript ♥. <br /> No exemplo a seguir o assunto será de acordo com o nome preenchido pelo usuário. Mas também poderia ser um valor random, ou qualquer outro que fique melhor para a sua solução.</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="hidden" name="_subject" id="input-subject"/&gt;
 &lt;input type="text" name="Nome" id="input-nome"&gt;
 &lt;script&gt;
@@ -69,52 +81,66 @@
     });
 &lt;/script&gt;
 </pre>
-<h4>Não se esqueça de confirmar seu email!</h4>
+<p></p>
+<h4>Não se esqueça de confirmar seu email!</h4>
 <p class="important-thing">Se você não confirmar seu email o seu formulário não vai funcionar! </p>
-<p>Depois de publicar seu formulário, você deverá preenchê-lo uma vez. Após preencher, o Formspree vai te enviar um email de confirmação de email. Vá ao seu email, clique no link de confirmação que foi enviado e pronto! A partir daí tudo deverá funcionar.</p>
-<p>Esse passo deve ser repetido para cada página diferente em que você colocar um formulário com Formspree. <br />Por exemplo, se você colocar um formulário com Formspree na url <span class="important-thing">http://meusite.com.br/contato/</span> e outro na url <span class="important-thing">http://meusite.com.br/trabalheconosco/</span>, você precisará preencher o formulário uma vez em cada página.</p>
-<p>O Formspree é gratuito, mas limitado a 1000 envios por email por mês. Caso precise de um número maior <a href="http://formspree.io/" target="_blank">entre em contato</a>.</p>
-<p>Vi o Formspree no blog do <a href="https://raank.github.io/blog/2015/05/form-de-contato-site-estatico.html" target="_blank">Felipe Rank</a>.</p>
-<p class="topic-call"><span class="important-thing">O problema maior ainda: Mas e os arquivos?! E se eu precisar de ibagens?!</span></p>
-<h3>FilePicker</h3>
-<p>Você pode integrar o seu formulário com a ferramenta <a href="https://www.filepicker.com/" target="_blank">FilePicker</a>, que vai fazer todo o gerenciamento dos arquivos pra você. A ferramenta FilePicker pode ser usada de várias maneiras. A implementação básica é bem simples. Aqui vou mostrar a implementação integrada com o Formspree usando JavaScript ♥.</p>
-<h4>Login</h4>
-<p>Você precisará <a href="https://www.filepicker.com/register/free" target="_blank">criar uma conta no FilePicker</a>. É bem rapido! <br /></p>
-<h4>API Key</h4>
-<p>Após criar uma conta o FilePicker, copie o atributo data-fp-apikey do código que for mostrado na tela. <br />No exemplo da tela abaixo a nossa API Key é "<span class="important-thing">A4xZuT80pQ3Kc1iZ3sj2Mz</span>".</p>
-<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/filepicker-apikey.jpg" alt="FilePicker APIKey" /></p></p>
-<p>Caso você feche essa tela não se preocupe! Esse valor fica disponível o tempo todo no cabeçalho do site.</p>
-<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/filepicker-apikey2.jpg" alt="FilePicker APIKey" /></p></p>
-<h4>Script do FilePicker</h4>
-<p>Você deve adicionar o script do FilePicker ao head da página que contém o formulário.</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<p>Depois de publicar seu formulário, você deverá preenchê-lo uma vez. Após preencher, o Formspree vai te enviar um email de confirmação de email. Vá ao seu email, clique no link de confirmação que foi enviado e pronto! A partir daí tudo deverá funcionar.</p>
+<p></p>
+<p>Esse passo deve ser repetido para cada página diferente em que você colocar um formulário com Formspree. <br />Por exemplo, se você colocar um formulário com Formspree na url <span class="important-thing">http://meusite.com.br/contato/</span> e outro na url <span class="important-thing">http://meusite.com.br/trabalheconosco/</span>, você precisará preencher o formulário uma vez em cada página.</p>
+<p></p>
+<p>O Formspree é gratuito, mas limitado a 1000 envios por email por mês. Caso precise de um número maior <a href="http://formspree.io/" target="_blank">entre em contato</a>.</p>
+<p>Vi o Formspree no blog do <a href="https://raank.github.io/blog/2015/05/form-de-contato-site-estatico.html" target="_blank">Felipe Rank</a>.</p>
+<p></p>
+<p class="topic-call"><span class="important-thing">O problema maior ainda: Mas e os arquivos?! E se eu precisar de ibagens?!</span></p>
+<p></p>
+<h3>FilePicker</h3>
+<p>Você pode integrar o seu formulário com a ferramenta <a href="https://www.filepicker.com/" target="_blank">FilePicker</a>, que vai fazer todo o gerenciamento dos arquivos pra você. A ferramenta FilePicker pode ser usada de várias maneiras. A implementação básica é bem simples. Aqui vou mostrar a implementação integrada com o Formspree usando JavaScript ♥.</p>
+<p></p>
+<h4>Login</h4>
+<p>Você precisará <a href="https://www.filepicker.com/register/free" target="_blank">criar uma conta no FilePicker</a>. É bem rapido! <br /></p>
+<p></p>
+<h4>API Key</h4>
+<p>Após criar uma conta o FilePicker, copie o atributo data-fp-apikey do código que for mostrado na tela. <br />No exemplo da tela abaixo a nossa API Key é "<span class="important-thing">A4xZuT80pQ3Kc1iZ3sj2Mz</span>".</p>
+<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/filepicker-apikey.jpg" alt="FilePicker APIKey" /></p></p>
+<p>Caso você feche essa tela não se preocupe! Esse valor fica disponível o tempo todo no cabeçalho do site.</p>
+<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/filepicker-apikey2.jpg" alt="FilePicker APIKey" /></p></p>
+<p></p>
+<h4>Script do FilePicker</h4>
+<p>Você deve adicionar o script do FilePicker ao head da página que contém o formulário.</p>
+<pre class="prettyprint lang-"html>
 &lt;script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"&gt;&lt;/script&gt;
 </pre>
-<h4>Crie um botão para o FilePicker</h4>
-<p>Você deve criar um botão ao estilo "Selecionar arquivos", e coloque um ID que utilizaremos para iniciar o FilePicker. <br /> Lembre-se de colocar <span class="important-thing">dentro do formulário</span>.</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<h4>Crie um botão para o FilePicker</h4>
+<p>Você deve criar um botão ao estilo "Selecionar arquivos", e coloque um ID que utilizaremos para iniciar o FilePicker. <br /> Lembre-se de colocar <span class="important-thing">dentro do formulário</span>.</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="button" id="filepicker" value="Selecionar arquivo" /&gt;
 </pre>
-<h4>Crie um input para o arquivo</h4>
-<p>Você deve criar um input dentro do formulário do Formspree do tipo hidden e com um id. Esse input receberá o link do arquivo que o usuário selecionar. (Faremos isso mais pra frente)</p>
-<pre class="prettyprint lang-"html>
+<p></p>
+<h4>Crie um input para o arquivo</h4>
+<p>Você deve criar um input dentro do formulário do Formspree do tipo hidden e com um id. Esse input receberá o link do arquivo que o usuário selecionar. (Faremos isso mais pra frente)</p>
+<pre class="prettyprint lang-"html>
 &lt;input type="hidden" name="Arquivo" /&gt;
 </pre>
-<h4>Show me the Code!</h4>
-<p>Adicione os trechos do JavaScript ♥ que vamos montar agora ao final da sua página. O importante é que ele seja colocado depois do botão que criamos anteriormente.</p>
-<h5>Configuração</h5>
-<p>Vamos começar configurando o FilePicker. Eu coloquei uma configuração bem básica. Nesse caso o usuário só poderá selecionar imagens. Para configurações mais complexas veja a <a href="https://www.filepicker.com/documentation/" target="_blank">Documentação</a>.</p>
-<pre class="prettyprint lang-"js>
+<p></p>
+<h4>Show me the Code!</h4>
+<p>Adicione os trechos do JavaScript ♥ que vamos montar agora ao final da sua página. O importante é que ele seja colocado depois do botão que criamos anteriormente.</p>
+<p></p>
+<h5>Configuração</h5>
+<p>Vamos começar configurando o FilePicker. Eu coloquei uma configuração bem básica. Nesse caso o usuário só poderá selecionar imagens. Para configurações mais complexas veja a <a href="https://www.filepicker.com/documentation/" target="_blank">Documentação</a>.</p>
+<pre class="prettyprint lang-"js>
 // Coloque as configurações do seu FilePicker
 // Nesse caso só aceitará imagens
 var filePickerSetup = {
     mimetype: 'image/*'
 };
 </pre>
-<h5>Sucesso</h5>
-<p>Agora vamos definir uma função que vai rodar após o usuário selecionar o arquivo. Essa função só será chamada se o arquivo for enviado com <span class="important-thing">sucesso</span>.</p>
-<p>Aqui será feita a integração com o formulário. Quando o usuário enviar um arquivo, adicionaremos um input do tipo hidden no formulário com a URL do arquivo selecionado. Ou seja, essa URL será enviado para o seu email junto com as outras informações preenchidas pelo usuário.</p>
-<pre class="prettyprint lang-"js>
+<h5>Sucesso</h5>
+<p>Agora vamos definir uma função que vai rodar após o usuário selecionar o arquivo. Essa função só será chamada se o arquivo for enviado com <span class="important-thing">sucesso</span>.</p>
+<p>Aqui será feita a integração com o formulário. Quando o usuário enviar um arquivo, adicionaremos um input do tipo hidden no formulário com a URL do arquivo selecionado. Ou seja, essa URL será enviado para o seu email junto com as outras informações preenchidas pelo usuário.</p>
+<p></p>
+<pre class="prettyprint lang-"js>
 // Definimos uma função que será executada se o arquivo for enviado com sucesso
 // O parâmetro file possui as informações do arquivo selecionado pelo usuário
 var onSuccess = function (file) {
@@ -124,17 +150,18 @@ var onSuccess = function (file) {
     inputFile.value = file.url;
 };
 </pre>
-<h5>Erro</h5>
-<p>Agora definiremos uma função que será chamada caso algum erro aconteça. Aqui o usuário recebe um alert informando que o arquivo não foi carregado.</p>
-<pre class="prettyprint lang-"js>
+<h5>Erro</h5>
+<p>Agora definiremos uma função que será chamada caso algum erro aconteça. Aqui o usuário recebe um alert informando que o arquivo não foi carregado.</p>
+<pre class="prettyprint lang-"js>
 var onError = function (data) {
     alert('Houve um erro ao carregar seus arquivos');
 };
 </pre>
-<p>Você também poderia adicionar um input que enviasse para o seu email que o usuário teve problemas para carregar o arquivo.</p>
-<h5>FilePicker Ativar!</h5>
-<p>Agora ativaremos o FilePicker quando o usuário clicar no botão que criamos. Na chamada devemos passar as configurações que fizemos anteriormente também. <br /> <span class="important-thing">Não se esqueça de substituir a API Key</span>.</p>
-<pre class="prettyprint lang-"js>
+<p>Você também poderia adicionar um input que enviasse para o seu email que o usuário teve problemas para carregar o arquivo.</p>
+<p></p>
+<h5>FilePicker Ativar!</h5>
+<p>Agora ativaremos o FilePicker quando o usuário clicar no botão que criamos. Na chamada devemos passar as configurações que fizemos anteriormente também. <br /> <span class="important-thing">Não se esqueça de substituir a API Key</span>.</p>
+<pre class="prettyprint lang-"js>
 // Botão criado para selecionar arquivos
 var filePickerButton = document.getElementById('filepicker');
 
@@ -146,10 +173,11 @@ filePickerButton.addEventListener('click', function() {
     filepicker.pick(filePickerSetup, onSuccess, onError);
 });
 </pre>
-<p>O FilePicker é gratuito, mas limitado em 500 arquivos por mês e também tem limite de tamanho.</p>
-<h3>Vamos ver como ficou!</h3>
-<p>Ufa! Depois de toda essas informações vamos ver como fica o código inteiro da página.</p>
-<pre class="prettyprint lang-"html>
+<p>O FilePicker é gratuito, mas limitado em 500 arquivos por mês e também tem limite de tamanho.</p>
+<p></p>
+<h3>Vamos ver como ficou!</h3>
+<p>Ufa! Depois de toda essas informações vamos ver como fica o código inteiro da página.</p>
+<pre class="prettyprint lang-"html>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -201,10 +229,11 @@ filePickerButton.addEventListener('click', function() {
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-<p>E o email enviado pelo Formspree seria bem parecido com esse:</p>
-<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/formspree-2.jpg" alt="Formspree" /></p></p>
-<p>Espero que esse post tenha ajudado você. Se precisar de mais ajuda deixe um comentário ou me mande um email que eu respondo!</p>
-<p>Aqui em baixo segue um outro exemplo de implementação que eu fiz no <a href="http://codepen.io/brulima/pen/zGMWgG" target="_blank">Codepen</a>. Essa implementação permite que o usuário selecione mais de um arquivo.</p>
+<p>E o email enviado pelo Formspree seria bem parecido com esse:</p>
+<p><p class="image-display"><img src="img/post/enviando-arquivos-em-formularios-em-sites-estaticos/formspree-2.jpg" alt="Formspree" /></p></p>
+<p></p>
+<p>Espero que esse post tenha ajudado você. Se precisar de mais ajuda deixe um comentário ou me mande um email que eu respondo!</p>
+<p>Aqui em baixo segue um outro exemplo de implementação que eu fiz no <a href="http://codepen.io/brulima/pen/zGMWgG" target="_blank">Codepen</a>. Essa implementação permite que o usuário selecione mais de um arquivo.</p>
 <iframe height='405' scrolling='no' src='//codepen.io/brulima/embed/zGMWgG/?height=405&theme-id=17439&default-tab=html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/brulima/pen/zGMWgG/'>zGMWgG</a> by Bruna Lima (<a href='http://codepen.io/brulima'>@brulima</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 <div id="disqus_thread"></div>

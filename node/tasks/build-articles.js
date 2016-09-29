@@ -1,26 +1,31 @@
 module.exports = function (grunt) {
-    var buildArticles = function () {
-        var fs = require('fs');
-
-        var path = {
+    var fs = require('fs');
+    var path = {
             articles: '../articles/',
             partials: '../postPartials/'
         };
 
+    var buildAllArticles = function () {
         fs.readdirSync(path.articles).forEach(function (file){
-            path.file = path.articles + file;
-            path.partial = path.partials + file;
-
-            var partials = fs.readFileSync(path.file, 'utf-8').split('\n');
-            var htmlPartials = categorizePartials(partials, ['<article>']);
-                htmlPartials.push('<div id="disqus_thread"></div>');
-                htmlPartials.push('<script src="js/disqus.js"></script>');
-                htmlPartials.push('</article>');
-            var htmlData = htmlPartials.join('\n');
-
-            console.log('File ', path.partial);
-            fs.writeFileSync(path.partial, htmlData, 'utf-8');
+            buildOneArticle(file);
         });
+    };
+
+    var buildOneArticle = function (file) {
+        path.file = path.articles + file;
+        path.partial = path.partials + file;
+
+        var partials = fs.readFileSync(path.file, 'utf-8').split('\n');
+
+        var htmlPartials = categorizePartials(partials, ['<article>']);
+            htmlPartials.push('<div id="disqus_thread"></div>');
+            htmlPartials.push('<script src="js/disqus.js"></script>');
+            htmlPartials.push('</article>');
+        
+        var htmlData = htmlPartials.join('\n');
+
+        console.log('File ', path.partial);
+        fs.writeFileSync(path.partial, htmlData, 'utf-8');
     };
 
     var categorizePartials = function (partials, htmlPartials) {
@@ -77,7 +82,7 @@ module.exports = function (grunt) {
                     continue;
                 }
 
-                htmlPartials.push(partial.replace(/</g, '&lt;').replace(/>/g, '&gt;'));
+                htmlpartials.push(partial.replace(/</g, '&lt;').replace(/>/g, '&gt;'));
                 continue;
             }
 
@@ -98,5 +103,10 @@ module.exports = function (grunt) {
         return htmlPartials;
     };
 
-    return grunt.task.registerTask('build-articles', buildArticles);
+    var runTask = function () {
+        if (typeof grunt.option('article') === "string") buildOneArticle(grunt.option('article'))
+        else buildAllArticles();
+    };
+
+    return grunt.task.registerTask('build-articles', runTask);
 };
